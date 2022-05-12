@@ -1,0 +1,21 @@
+[ x ] Main canvas setup
+[ x ] Character creation //cannot see character
+[ x ]  Gravity done
+[    ] Player Movement (wasd, arrows and space)
+[    ] "Love" scenario character
+[    ]  Item Collide
+[    ]  Win scenario
+[    ] DENIAL scenario?
+[    ] Intervals
+[    ]  How to make different levels?
+[    ] Text on canvas lvl
+[    ] Levels array
+[    ] Level creation
+    [    ] pick up coins
+    [    ] this or that
+    [    ] etc
+[    ] FORCE WIN BUTTON
+
+Setting up
+[    ] START GAME view
+[    ] INSTRUCTIONS view
