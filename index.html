@@ -9,16 +9,22 @@
       type="text/css"
       href="//fonts.googleapis.com/css?family=VT323"
     />
-    <title>O.B.D.C.</title>
+    <title>Rubber Duck Debugging</title>
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <h1>O.B.D.C.</h1>
-    <!--canvas-->
+    <div id="timer" width="1000" heigh></div>
 
-    <canvas id="gameScreen" width="1000" height="600"></canvas>
+    <div style="position: relative">
+    <div style="position: absolute; display: flex;">
+      <!--timer-->
+      <div style="background-color: red; width: 100px; height: 100px;><div>
+       <!--canvas-->
+      <canvas id="gameScreen" width="800" height="400"></canvas>
+      </div>
+    </div>
     <!--script-->
-    <script src="index.js"></script>
+    <script src="js/index-original.js"></script>
   </body>
 </html>

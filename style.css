@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-color: #2506d0;
+  background-color: #2e2e2e;
 }
 #gameScreen {
   padding-left: 0;
@@ -9,7 +9,7 @@ body {
   margin-right: auto;
   display: block;
   width: 1000px;
-  border: 2px dashed white;
+  border: 20px Solid GRAY;
 }
 h1,
 h2,

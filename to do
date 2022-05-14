@@ -1,9 +1,11 @@
 [ x ] Main canvas setup
 [ x ] Character creation //cannot see character
 [ x ]  Gravity done
-[    ] Player Movement (wasd, arrows and space)
-[    ] "Love" scenario character
+[ x  ] Player Movement (wasd, arrows and space)
+[    ] dont leave screen
 [    ]  Item Collide
+[  /  ]  Timer, visible timer and gameOver
+[    ] "Love" scenario character
 [    ]  Win scenario
 [    ] DENIAL scenario?
 [    ] Intervals
@@ -11,11 +13,25 @@
 [    ] Text on canvas lvl
 [    ] Levels array
 [    ] Level creation
-    [    ] pick up coins
-    [    ] this or that
-    [    ] etc
+                                    [    ] COLLECT
+                                    [    ] this or that
+                                    [    ] COFFE BREAK /WATER
+                                    [    ] SUICIDE
+                                    [    ] WALK
+                                    [    ] JUMP
+                                    [    ] COLLE
+                                    [    ] HIDE /BOX COLLISION GRAVITY
+                                    [    ] SURVIVE/ SQUARE COLLISION HORIZONTAL
+                                     [    ] ROMANCE (COLLISION WITH CHARACTER)
+                                   [    ]   COLLISION WITH SPIKES
+                                    [    ]  SURVIVE FALLING SPIKES
+                                   [    ]   BLOCK (COLLISION WITH FALLING [    ] OBJECT)                          
+
 [    ] FORCE WIN BUTTON
+
+    [    ] make character turn 
 
 Setting up
 [    ] START GAME view
 [    ] INSTRUCTIONS view
+Name your duck?
