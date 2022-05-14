@@ -1,9 +1,9 @@
 [ x ] Main canvas setup
 [ x ] Character creation //cannot see character
 [ x ]  Gravity done
-[ x  ] Player Movement (wasd, arrows and space)
-[    ] dont leave screen
-[    ]  Item Collide
+[ x ] Player Movement (wasd, arrows and space)
+[ x ] dont leave screen
+[  x  ]  Item Collide
 [  /  ]  Timer, visible timer and gameOver
 [    ] "Love" scenario character
 [    ]  Win scenario
@@ -33,5 +33,9 @@
 
 Setting up
 [    ] START GAME view
+easy levels to win
+medium levels to win
+hard infinite
+
 [    ] INSTRUCTIONS view
 Name your duck?
