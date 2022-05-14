@@ -13,13 +13,17 @@ class Character {
     };
     this.width = 30;
     this.height = 30;
-
-    this.lives = 3;
   }
 
   draw() {
     ctx.fillStyle = "yellow";
     ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
+    ctx.fillStyle = "orange";
+    ctx.fillRect(this.position.x + 7, this.position.y + 7, 15, 10);
+    ctx.fillStyle = "black";
+    ctx.fillRect(this.position.x + 3, this.position.y + 7, 5, 5);
+    ctx.fillStyle = "black";
+    ctx.fillRect(this.position.x + 22, this.position.y + 7, 5, 5);
   }
 
   update() {
