@@ -13,6 +13,9 @@ class Character {
     };
     this.width = 30;
     this.height = 30;
+
+    this.time = 10;
+    this.lifePoints = 3;
   }
 
   draw() {
@@ -32,11 +35,11 @@ class Character {
     this.position.x += this.velocity.x;
 
     //canvas limits
-    //y axi  s
+    //on y axis
     if (this.position.y > canvas.height - this.height)
       this.position.y = canvas.height - this.height;
     if (this.position.y < 0) this.position.y = 0;
-    //x axis
+    //on x axis
     if (this.position.x > canvas.width - this.width)
       this.position.x = canvas.width - this.width;
     this.x = 520;

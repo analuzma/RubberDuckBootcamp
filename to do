@@ -2,18 +2,25 @@
 [ x ] Character creation //cannot see character
 [ x ]  Gravity done
 [ x ] Player Movement (wasd, arrows and space)
-[ x ] dont leave screen
-[  x  ]  Item Collide
-[  /  ]  Timer, visible timer and gameOver
-[    ] "Love" scenario character
-[    ]  Win scenario
-[    ] DENIAL scenario?
-[    ] Intervals
-[    ]  How to make different levels?
-[    ] Text on canvas lvl
-[    ] Levels array
-[    ] Level creation
-                                    [    ] COLLECT
+[ x ] canvas limits player
+[ x ]  Item Collide 5/12/2022
+[    ] Do Level 1 (collect)
+  [    ] create objects
+  [    ] pick up objects/ display
+  [    ] text on screen 
+  [    ] time interval
+  [    ] lives
+  [    ] WIN
+  [    ] GAMEOVER
+[    ] Do Level 2 (do not collect)
+  [    ] "DENIAL"
+  [    ] text on screen denial
+[    ] Level array
+[    ] Go trough levels of array
+[    ] set html steps
+
+DO LEVELS
+ [    ] COLLECT
                                     [    ] this or that
                                     [    ] COFFE BREAK /WATER
                                     [    ] SUICIDE
@@ -24,18 +31,3 @@
                                     [    ] SURVIVE/ SQUARE COLLISION HORIZONTAL
                                      [    ] ROMANCE (COLLISION WITH CHARACTER)
                                    [    ]   COLLISION WITH SPIKES
-                                    [    ]  SURVIVE FALLING SPIKES
-                                   [    ]   BLOCK (COLLISION WITH FALLING [    ] OBJECT)                          
-
-[    ] FORCE WIN BUTTON
-
-    [    ] make character turn 
-
-Setting up
-[    ] START GAME view
-easy levels to win
-medium levels to win
-hard infinite
-
-[    ] INSTRUCTIONS view
-Name your duck?
