@@ -1,3 +1,7 @@
+// Initialize level
+let levelCount = 0;
+let currentLevel = levels[levelCount];
+
 // // Levels
 // const levels = [
 // (level1 = { levelName: [],  negate: false),

@@ -4,14 +4,19 @@
 [ x ] Player Movement (wasd, arrows and space)
 [ x ] canvas limits player
 [ x ]  Item Collide 5/12/2022
-[    ] Do Level 1 (collect)
-  [    ] create objects
-  [    ] pick up objects/ display
-  [    ] text on screen 
-  [    ] time interval
-  [    ] lives
-  [    ] WIN
-  [    ] GAMEOVER
+[  x  ] CREATE LEVEL CLASS
+
+[ ] PAUSAR JUEGO
+
+  [    ] Do Level 1 (collect)
+    [  x ] create objects 
+    [    ] pick up objects/ display
+    [  x  ] text on screen  
+    [  x  ] time on level
+    [    ]COUNTDOWNTIMER
+    [  x-  ] lives //mas o menos
+    [    ] WIN
+    [    ] GAMEOVER
 [    ] Do Level 2 (do not collect)
   [    ] "DENIAL"
   [    ] text on screen denial
