@@ -9,14 +9,10 @@ canvas.height = 400;
 
 const gravity = 0.7;
 
-//
-
 //level variables
 let levelCount = 1;
-//eventually: let currentLevel - levels[levelCount]
 
 //MAIN CHARACTER
-
 const character = new Character();
 
 //INPUTS
@@ -30,16 +26,20 @@ const keys = {
 };
 
 //SOUNDS
-
 const bgMusic = new Audio("/sounds/8bit.mp3");
 bgMusic.level = 0.5;
 bgMusic.loop = true;
 
 const quackSFX = new Audio("/sounds/Quack.mp3");
-const hurtSFX = new Audio("/sounds/ Oof.mp3");
+quackSFX.level = 0.5;
+const ouchSFX = new Audio("/sounds/ Ouch.mp3");
 const clickSFX = new Audio("/sounds/Click.mp3");
-//sounds array
-const sounds = [bgMusic, quackSFX, hurtSFX, clickSFX];
+
+//make rubber duck quack
+const img = document.querySelector("img");
+img.onclick = () => {
+  quackSFX.play();
+};
 
 // function toggleMute() {
 //   if (mute.value === "unmuted") {

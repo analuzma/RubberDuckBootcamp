@@ -3,7 +3,7 @@
 class Character {
   constructor() {
     this.position = {
-      x: canvas.width / 2,
+      x: 385,
       y: canvas.height / 2,
     };
 
@@ -19,9 +19,9 @@ class Character {
 
   draw() {
     //duck face
-    ctx.fillStyle = "yellow";
+    ctx.fillStyle = "#F9B811";
     ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
-    ctx.fillStyle = "orange";
+    ctx.fillStyle = "rgb(232,93,39)";
     ctx.fillRect(this.position.x + 7, this.position.y + 7, 15, 10);
     ctx.fillStyle = "black";
     ctx.fillRect(this.position.x + 3, this.position.y + 7, 5, 5);
@@ -130,21 +130,20 @@ class Character {
   gameOver() {
     character.lifePoints -= 1;
     levelCount++;
-    hurtSFX.play();
+    ouchSFX.play();
     this.respawn();
-    ctx.clearRect();
-    this.respawn();
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
 
   winPassLevel() {
     levelCount++;
     quackSFX.play();
     this.respawn();
-    ctx.clearRect();
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
 
   respawn() {
-    this.position.x = 400;
+    this.position.x = 385;
     this.position.y = 200;
     this.velocity.x = 0;
     this.velocity.y = 0;

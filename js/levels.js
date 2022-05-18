@@ -254,6 +254,7 @@ function animate() {
   //////////////////////////////
   ///  LEVELS GO HERE /////
   //////////////////////////////
+  //bgMusic.play();
   switch (levelCount) {
     case 1:
       level1();
