@@ -34,64 +34,64 @@ class Character {
     if (this.lifePoints === 3) {
       //heart1
       ctx.fillStyle = "red";
-      ctx.fillRect(10, 10, 8, 8);
-      ctx.fillRect(20, 10, 8, 8);
-      ctx.fillRect(14, 15, 10, 10);
+      ctx.fillRect(54, 30, 8, 8);
+      ctx.fillRect(64, 30, 8, 8);
+      ctx.fillRect(58, 35, 10, 10);
       //heart2
-      ctx.fillRect(38, 10, 8, 8);
-      ctx.fillRect(48, 10, 8, 8);
-      ctx.fillRect(42, 15, 10, 10);
+      ctx.fillStyle = "red";
+      ctx.fillRect(78, 30, 8, 8);
+      ctx.fillRect(88, 30, 8, 8);
+      ctx.fillRect(82, 35, 10, 10);
       //heart3
-      ctx.fillRect(66, 10, 8, 8);
-      ctx.fillRect(76, 10, 8, 8);
-      ctx.fillRect(70, 15, 10, 10);
+      ctx.fillRect(102, 30, 8, 8);
+      ctx.fillRect(112, 30, 8, 8);
+      ctx.fillRect(106, 35, 10, 10);
     } else if (this.lifePoints === 2) {
       hurtSFX.play();
       //heart1
       ctx.fillStyle = "red";
-      ctx.fillRect(10, 10, 8, 8);
-      ctx.fillRect(20, 10, 8, 8);
-      ctx.fillRect(14, 15, 10, 10);
+      ctx.fillRect(54, 30, 8, 8);
+      ctx.fillRect(64, 30, 8, 8);
+      ctx.fillRect(58, 35, 10, 10);
       //heart2
-      ctx.fillRect(38, 10, 8, 8);
-      ctx.fillRect(48, 10, 8, 8);
-      ctx.fillRect(42, 15, 10, 10);
+      ctx.fillRect(78, 30, 8, 8);
+      ctx.fillRect(88, 30, 8, 8);
+      ctx.fillRect(82, 35, 10, 10);
       //heart3 X
       ctx.fillStyle = "grey";
-      ctx.fillRect(66, 10, 8, 8);
-      ctx.fillRect(76, 10, 8, 8);
-      ctx.fillRect(70, 15, 10, 10);
+      ctx.fillRect(102, 30, 8, 8);
+      ctx.fillRect(112, 30, 8, 8);
+      ctx.fillRect(106, 35, 10, 10);
     } else if (this.lifePoints === 1) {
       hurtSFX.play();
       //heart1
-      ctx.fillStyle = "red";
-      ctx.fillRect(10, 10, 8, 8);
-      ctx.fillRect(20, 10, 8, 8);
-      ctx.fillRect(14, 15, 10, 10);
+      ctx.fillRect(54, 30, 8, 8);
+      ctx.fillRect(64, 30, 8, 8);
+      ctx.fillRect(58, 35, 10, 10);
       //heart2 X
       ctx.fillStyle = "grey";
-      ctx.fillRect(38, 10, 8, 8);
-      ctx.fillRect(48, 10, 8, 8);
-      ctx.fillRect(42, 15, 10, 10);
+      ctx.fillRect(78, 30, 8, 8);
+      ctx.fillRect(88, 30, 8, 8);
+      ctx.fillRect(82, 35, 10, 10);
       //heart3 X
-      ctx.fillRect(66, 10, 8, 8);
-      ctx.fillRect(76, 10, 8, 8);
-      ctx.fillRect(70, 15, 10, 10);
+      ctx.fillRect(102, 30, 8, 8);
+      ctx.fillRect(112, 30, 8, 8);
+      ctx.fillRect(106, 35, 10, 10);
     } else {
       hurtSFX.play();
       //heart1
       ctx.fillStyle = "grey";
-      ctx.fillRect(10, 10, 8, 8);
-      ctx.fillRect(20, 10, 8, 8);
-      ctx.fillRect(14, 15, 10, 10);
+      ctx.fillRect(54, 30, 8, 8);
+      ctx.fillRect(64, 30, 8, 8);
+      ctx.fillRect(58, 35, 10, 10);
       //heart2
-      ctx.fillRect(38, 10, 8, 8);
-      ctx.fillRect(48, 10, 8, 8);
-      ctx.fillRect(42, 15, 10, 10);
+      ctx.fillRect(78, 30, 8, 8);
+      ctx.fillRect(88, 30, 8, 8);
+      ctx.fillRect(82, 35, 10, 10);
       //heart3
-      ctx.fillRect(66, 10, 8, 8);
-      ctx.fillRect(76, 10, 8, 8);
-      ctx.fillRect(70, 15, 10, 10);
+      ctx.fillRect(102, 30, 8, 8);
+      ctx.fillRect(112, 30, 8, 8);
+      ctx.fillRect(106, 35, 10, 10);
     }
   }
   update() {
@@ -129,11 +129,14 @@ class Character {
 
   gameOver() {
     character.lifePoints -= 1;
-    alert("GAME OVER");
-    //nextlevelfunction
+    levelCount++;
+    OofSFX.play();
+    ctx.clearRect();
   }
 
   winPassLevel() {
-    alert("You win, pass to the next level");
+    levelCount++;
+    quackSFX.play();
+    ctx.clearRect();
   }
 }

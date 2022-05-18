@@ -8,31 +8,26 @@
 
 [ ] PAUSAR JUEGO
 
-  [    ] Do Level 1 (collect)
+  [  x  ] Do Level 1
     [  x ] create objects 
-    [    ] pick up objects/ display
+    [    ] pick up objects/ display ( ? )
     [  x  ] text on screen  
     [  x  ] time on level
-    [    ]COUNTDOWNTIMER
+    [  x  ]COUNTDOWNTIMER
     [  x-  ] lives //mas o menos
-    [    ] WIN
-    [    ] GAMEOVER
-[    ] Do Level 2 (do not collect)
-  [    ] "DENIAL"
-  [    ] text on screen denial
-[    ] Level array
-[    ] Go trough levels of array
-[    ] set html steps
+    [  x  ] WIN
+    [ x   ] GAMEOVER
+
 
 DO LEVELS
  [    ] COLLECT
-                                    [    ] this or that
+                                    [  x  ] this or that
                                     [    ] COFFE BREAK /WATER
                                     [    ] SUICIDE
                                     [    ] WALK
-                                    [    ] JUMP
+                                    [  x  ] JUMP
                                     [    ] COLLE
-                                    [    ] HIDE /BOX COLLISION GRAVITY
+                                    [    ] HIDE /BOX COLLISION GRAVITY 
                                     [    ] SURVIVE/ SQUARE COLLISION HORIZONTAL
                                      [    ] ROMANCE (COLLISION WITH CHARACTER)
                                    [    ]   COLLISION WITH SPIKES

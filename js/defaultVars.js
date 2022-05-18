@@ -12,7 +12,7 @@ const gravity = 0.7;
 //
 
 //level variables
-let levelCount = 0;
+let levelCount = 1;
 //eventually: let currentLevel - levels[levelCount]
 
 //MAIN CHARACTER

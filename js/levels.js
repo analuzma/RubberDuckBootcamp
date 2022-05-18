@@ -1,4 +1,4 @@
-/////////////////////////////////// Class LevelStyle
+////////////////////////////////// Class LevelStyle
 // used so every level has its own background color and text on screen
 class LevelStyle {
   constructor(bgColor, nameColor, levelName) {
@@ -29,9 +29,14 @@ class LevelLogic {
     this.time = time;
   }
   TimeScreen() {
+    ctx.font = "20px VT323";
+    ctx.fillStyle = "white";
+    ctx.fillText(`Current level:`, 600, 50);
     ctx.font = "70px VT323";
     ctx.fillStyle = "white";
-    ctx.fillText(`${Math.trunc(this.time)}`, 50, 100);
+    ctx.fillText(`${levelCount}`, 680, 100);
+    ctx.fillStyle = "white";
+    ctx.fillText(`${(Math.round(this.time * 100) / 100).toFixed(1)}`, 50, 100);
   }
 
   drawText(text, x, y) {
@@ -64,7 +69,7 @@ const styleTouchThis = new LevelStyle(
   "TOUCH GREEN"
 );
 //** ENTITIES**//
-const objectBlue = new Object(700, 350, 50, 50, "blue");
+const objectBlue = new Object(700, 350, 50, 50, "HotPink");
 const objectGreen = new Object(50, 350, 50, 50, "green");
 
 //** extra TEXTS ON SCREEN**//
@@ -111,7 +116,7 @@ function level1() {
 //LEVEL NUMBER: 2
 /////////////////////////////////////////////////////////////////
 //**  LEVEL STYLE **//
-const styleJump = new LevelStyle("midnightblue", "lightblue", "FLY TO CEILING");
+const styleJump = new LevelStyle("RebeccaPurple", "Thistle", "FLY TO CEILING");
 //** ENTITIES**//
 //none
 
@@ -131,7 +136,7 @@ class Jump extends LevelLogic {
 //CREATE LEVEL WITH EXTENDED LOGIC//
 const levelJump = new Jump(60);
 
-//** TURNS WHOLE "LEVEL1" into a function that will be added to the global TIME UPDATE "ANIMATE"  **//
+//** LEVEL2 TO FUNCTION
 function level2() {
   //LEVEL
   //background
@@ -148,6 +153,97 @@ function level2() {
   // Update the timer
   levelJump.reduceTime();
 }
+
+//////////////////////////////////////////////////////////////////
+//LEVEL NAME: "TOUCH RIGHT WALL"
+//NEGATED: FALSE
+//LEVEL NUMBER: 3
+/////////////////////////////////////////////////////////////////
+//**  LEVEL STYLE **//
+const styleRightWall = new LevelStyle(
+  "Teal",
+  "MediumAquamarine",
+  "TOUCH RIGHT WALL"
+);
+//** ENTITIES**//
+//none
+
+//** EXTEND LEVEL LOGIC **//
+class RightWall extends LevelLogic {
+  constructor(time) {
+    super(time);
+  }
+  //unique methods for the level
+  didItWin() {
+    if (character.position.x === 770) {
+      character.winPassLevel();
+    } else if (character.position.x === 0) {
+      character.gameOver();
+    }
+  }
+}
+
+//CREATE LEVEL WITH EXTENDED LOGIC//
+const levelRightWall = new RightWall(60);
+
+//** LEVEL3 TO FUNCTION
+function level3() {
+  //LEVEL
+  //background
+  styleRightWall.draw();
+  styleRightWall.LevelTitleScreen();
+  //character
+  character.lifeDraw();
+  character.update();
+  //entities
+
+  //level methods
+  levelRightWall.TimeScreen();
+  levelRightWall.didItWin();
+  // Update the timer
+  levelRightWall.reduceTime();
+}
+
+//////////////////////////////////////////////////////////////////
+//LEVEL NAME: "!SUICIDE"
+//NEGATED: TRUE
+//LEVEL NUMBER: 5
+/////////////////////////////////////////////////////////////////
+//**  LEVEL STYLE **//
+const styleSuicideNeg = new LevelStyle("DarkRed", "white", "!SUICIDE");
+//** ENTITIES**//
+//spike
+
+//** EXTEND LEVEL LOGIC **//
+class SuicideNeg extends LevelLogic {
+  constructor(time) {
+    super(time);
+  }
+  //unique methods for the level
+  didItWin() {}
+}
+
+//CREATE LEVEL WITH EXTENDED LOGIC//
+const levelSuicideNeg = new SuicideNeg(300);
+
+//** LEVEL3 TO FUNCTION
+function level4() {
+  //LEVEL
+  //background
+  styleSuicideNeg.draw();
+  styleSuicideNeg.LevelTitleScreen();
+  //character
+  character.lifeDraw();
+  character.update();
+  //entities
+
+  //level methods
+  levelSuicideNeg.TimeScreen();
+  levelSuicideNeg.didItWin();
+  // Update the timer
+  levelSuicideNeg.reduceTime();
+}
+
 /////////////////////////////////////////////////////////////*********************** GLOBAL ANIMATE*********************************
 ////////////////////////////////////////////////////////////
 
@@ -157,7 +253,31 @@ function animate() {
   //////////////////////////////
   ///  LEVELS GO HERE /////
   //////////////////////////////
-  level2();
+  switch (levelCount) {
+    case 1:
+      level1();
+      break;
+    case 2:
+      level2();
+      break;
+    case 3:
+      level3();
+      break;
+    case 4:
+      level4();
+      break;
+    case 5:
+      dayName = "Thursday";
+      break;
+    case 6:
+      dayName = "Friday";
+      break;
+    case 7:
+      dayName = "Saturday";
+      break;
+    default:
+      dayName = "Invalid day";
+  }
   //////////////////////////////////
   //key movement and friction
   if (keys.right.pressed) {
