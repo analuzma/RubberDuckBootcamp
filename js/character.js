@@ -47,7 +47,7 @@ class Character {
       ctx.fillRect(112, 30, 8, 8);
       ctx.fillRect(106, 35, 10, 10);
     } else if (this.lifePoints === 2) {
-      hurtSFX.play();
+      //hurtSFX.play();
       //heart1
       ctx.fillStyle = "red";
       ctx.fillRect(54, 30, 8, 8);
@@ -63,7 +63,7 @@ class Character {
       ctx.fillRect(112, 30, 8, 8);
       ctx.fillRect(106, 35, 10, 10);
     } else if (this.lifePoints === 1) {
-      hurtSFX.play();
+      //hurtSFX.play();
       //heart1
       ctx.fillRect(54, 30, 8, 8);
       ctx.fillRect(64, 30, 8, 8);
@@ -78,7 +78,7 @@ class Character {
       ctx.fillRect(112, 30, 8, 8);
       ctx.fillRect(106, 35, 10, 10);
     } else {
-      hurtSFX.play();
+      //hurtSFX.play();
       //heart1
       ctx.fillStyle = "grey";
       ctx.fillRect(54, 30, 8, 8);
@@ -130,13 +130,23 @@ class Character {
   gameOver() {
     character.lifePoints -= 1;
     levelCount++;
-    OofSFX.play();
+    hurtSFX.play();
+    this.respawn();
     ctx.clearRect();
+    this.respawn();
   }
 
   winPassLevel() {
     levelCount++;
     quackSFX.play();
+    this.respawn();
     ctx.clearRect();
+  }
+
+  respawn() {
+    this.position.x = 400;
+    this.position.y = 200;
+    this.velocity.x = 0;
+    this.velocity.y = 0;
   }
 }

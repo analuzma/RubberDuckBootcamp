@@ -72,8 +72,6 @@ const styleTouchThis = new LevelStyle(
 const objectBlue = new Object(700, 350, 50, 50, "HotPink");
 const objectGreen = new Object(50, 350, 50, 50, "green");
 
-//** extra TEXTS ON SCREEN**//
-
 //** EXTEND LEVEL LOGIC **//
 class TouchThis extends LevelLogic {
   constructor(time) {
@@ -82,15 +80,15 @@ class TouchThis extends LevelLogic {
   //unique methods for the level
   didItWin() {
     if (character.collision(objectGreen) === true) {
-      return character.winPassLevel(); //future method next level
+      return character.winPassLevel();
     } else if (character.collision(objectBlue) === true) {
-      return character.gameOver(); //future method next level
+      return character.gameOver();
     }
   }
 }
 
 //CREATE LEVEL WITH EXTENDED LOGIC//
-const levelTouchThis = new TouchThis(60);
+const levelTouchThis = new TouchThis(10);
 
 //** TURNS WHOLE "LEVEL1" into a function that will be added to the global TIME UPDATE "ANIMATE"  **//
 function level1() {
@@ -134,7 +132,7 @@ class Jump extends LevelLogic {
 }
 
 //CREATE LEVEL WITH EXTENDED LOGIC//
-const levelJump = new Jump(60);
+const levelJump = new Jump(10);
 
 //** LEVEL2 TO FUNCTION
 function level2() {
@@ -184,7 +182,7 @@ class RightWall extends LevelLogic {
 }
 
 //CREATE LEVEL WITH EXTENDED LOGIC//
-const levelRightWall = new RightWall(60);
+const levelRightWall = new RightWall(10);
 
 //** LEVEL3 TO FUNCTION
 function level3() {
@@ -212,7 +210,7 @@ function level3() {
 //**  LEVEL STYLE **//
 const styleSuicideNeg = new LevelStyle("DarkRed", "white", "!SUICIDE");
 //** ENTITIES**//
-//spike
+const spike1 = new Spike("gray", 300, 600);
 
 //** EXTEND LEVEL LOGIC **//
 class SuicideNeg extends LevelLogic {
@@ -220,11 +218,14 @@ class SuicideNeg extends LevelLogic {
     super(time);
   }
   //unique methods for the level
-  didItWin() {}
+  didItWin() {
+    if (character.collision(spike1) === true) {
+      return character.gameOver();
+    }
+  }
 }
-
 //CREATE LEVEL WITH EXTENDED LOGIC//
-const levelSuicideNeg = new SuicideNeg(300);
+const levelSuicideNeg = new SuicideNeg(10);
 
 //** LEVEL3 TO FUNCTION
 function level4() {
@@ -236,7 +237,7 @@ function level4() {
   character.lifeDraw();
   character.update();
   //entities
-
+  spike1.draw();
   //level methods
   levelSuicideNeg.TimeScreen();
   levelSuicideNeg.didItWin();

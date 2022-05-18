@@ -29,38 +29,6 @@ const keys = {
   },
 };
 
-//character wins, next level
-//  nextLevel() {
-//     levelCount++;
-
-//     switch (levelCount) {
-//       case 1:
-//         navigationTutorial.classList.add("hidden");
-//         break;
-
-//       case 2:
-//         layersTutorial.classList.remove("hidden");
-//         break;
-
-//       case 3:
-//         layersTutorial.classList.add("hidden");
-//         break;
-
-//       case 8:
-//         return playerWon();
-//     } currentLevel = levels[levelCount];
-//     nextevel.play();
-//     character.draw(); //respawn
-//   }
-//
-
-//function newGame
-// function newGame()
-// {
-// music.play()
-// update();
-// }
-
 //SOUNDS
 
 const bgMusic = new Audio("/sounds/8bit.mp3");
