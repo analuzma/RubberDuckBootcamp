@@ -4,7 +4,7 @@ class Character {
   constructor() {
     this.position = {
       x: canvas.width / 2,
-      y: 0,
+      y: canvas.height / 2,
     };
 
     this.velocity = {
@@ -118,16 +118,7 @@ class Character {
   }
 
   //collision. returns true || false. item being object or enemy
-  collisionWin(item) {
-    return (
-      this.position.x < item.position.x + item.width &&
-      this.position.x + this.width > item.position.x &&
-      this.position.y < item.position.y + item.height &&
-      this.position.y + this.height > item.position.y
-    );
-  }
-
-  collisionHurt(item) {
+  collision(item) {
     return (
       this.position.x < item.position.x + item.width &&
       this.position.x + this.width > item.position.x &&
@@ -137,6 +128,12 @@ class Character {
   }
 
   gameOver() {
+    character.lifePoints -= 1;
     alert("GAME OVER");
+    //nextlevelfunction
+  }
+
+  winPassLevel() {
+    alert("You win, pass to the next level");
   }
 }

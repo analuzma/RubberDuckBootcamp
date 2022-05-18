@@ -16,3 +16,37 @@ let currentLevel = levels[levelCount];
 // (level10 = { levelName: [ ],  negate: false),
 // (level11 = { levelName: [ ],  negate: false),
 // ]
+
+// **** I want to create an array of functions
+let levelsArray = [];
+let levelsArray = [level0, level1, level2, level3, level4];
+
+// we call to our level using levelsArray[0]();
+
+// somehow create a funtction "nextLevel(), to go to next one"
+
+//example del juego SHIFTer
+// nextLevel() {
+//   levelCount++;
+
+//   switch (levelCount) {
+//     case 1:
+//       navigationTutorial.classList.add("hidden");
+//       break;
+
+//     case 2:
+//       layersTutorial.classList.remove("hidden");
+//       break;
+
+//     case 3:
+//       layersTutorial.classList.add("hidden");
+//       break;
+
+//     case 8:
+//       return playerWon();
+//   }
+
+//   currentLevel = levels[levelCount];
+//   nextLevelSound.play();
+//   this.respawn();
+// }
