@@ -7,8 +7,8 @@ class LevelStyle {
     this.width = canvas.width;
     this.height = canvas.height;
     this.bgColor = bgColor;
-    this.levelName = levelName;
     this.nameColor = nameColor;
+    this.levelName = levelName;
   }
   //methods
   draw() {
@@ -51,7 +51,7 @@ class LevelLogic {
 
   reduceTime() {
     if (this.time <= 1) {
-      character.gameOver(); //eventualmente funcion NextLevel
+      character.lostPassLevel();
     } else {
       this.time -= 1 / 60;
     }
@@ -82,7 +82,7 @@ class TouchThis extends LevelLogic {
     if (character.collision(objectGreen) === true) {
       return character.winPassLevel();
     } else if (character.collision(objectBlue) === true) {
-      return character.gameOver();
+      return character.lostPassLevel();
     }
   }
 }
@@ -93,6 +93,7 @@ const levelTouchThis = new TouchThis(10);
 //** TURNS WHOLE "LEVEL1" into a function that will be added to the global TIME UPDATE "ANIMATE"  **//
 function level1() {
   //LEVEL
+  //adds music-------------------------------------------------------------------
   //background
   styleTouchThis.draw();
   styleTouchThis.LevelTitleScreen();
@@ -176,7 +177,7 @@ class RightWall extends LevelLogic {
     if (character.position.x === 770) {
       character.winPassLevel();
     } else if (character.position.x === 0) {
-      character.gameOver();
+      character.lostPassLevel();
     }
   }
 }
@@ -220,7 +221,7 @@ class SuicideNeg extends LevelLogic {
   //unique methods for the level
   didItWin() {
     if (character.collision(spike1) === true) {
-      return character.gameOver();
+      return character.lostPassLevel();
     }
   }
 }
@@ -245,7 +246,53 @@ function level4() {
   levelSuicideNeg.reduceTime();
 }
 
-/////////////////////////////////////////////////////////////*********************** GLOBAL ANIMATE*********************************
+////////////////////////////////////////////////////////////********************* START GAME
+////////////////////////////////////////////////////////////
+//**  LEVEL STYLE **//
+const styleStartGame = new LevelStyle("black", "white", "RUBBER DUCK BOOTCAMP");
+//entities
+
+//** EXTEND LEVEL LOGIC **//
+class StartGame extends LevelLogic {
+  //unique methods for the level
+  goToLevel1() {
+    addEventListener("keyup", ({ keyCode }) => {
+      switch (event.keyCode) {
+        case 13: //enter keycode
+          quackSFX.play();
+          bgMusic.play();
+          levelCount = 1;
+          console.log(levelCount);
+          break;
+      }
+    });
+  }
+}
+
+//CREATE LEVEL WITH EXTENDED LOGIC//
+const levelStartGame = new StartGame();
+
+//** TURNS WHOLE "LEVEL1" into a function that will be added to the global TIME UPDATE "ANIMATE"  **//
+function level0() {
+  //LEVEL
+  //adds music-------------------------------------------------------------------
+  //background
+  styleStartGame.draw();
+  styleStartGame.LevelTitleScreen();
+  //character
+
+  //entities
+
+  //level methods
+  levelStartGame.goToLevel1();
+}
+////////////////////////////////////////////////////////////********************* YOU WIN
+////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////********************* GAME  OVER
+////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////*********************** GLOBAL ANIMATE*********************************
 ////////////////////////////////////////////////////////////
 
 function animate() {
@@ -254,8 +301,10 @@ function animate() {
   //////////////////////////////
   ///  LEVELS GO HERE /////
   //////////////////////////////
-  //bgMusic.play();
   switch (levelCount) {
+    case 0: //start game
+      level0();
+      break;
     case 1:
       level1();
       break;
@@ -272,14 +321,27 @@ function animate() {
       dayName = "Thursday";
       break;
     case 6:
-      dayName = "Friday";
+      dayName = "Thursday";
       break;
     case 7:
-      dayName = "Saturday";
+      dayName = "Thursday";
       break;
-    default:
-      dayName = "Invalid day";
+    case 8:
+      dayName = "Thursday";
+      break;
+    case 9:
+      dayName = "Thursday";
+      break;
+    case 10:
+      dayName = "Thursday";
+      break;
+    case 11: //you win
+      dayName = "Thursday";
+      break;
+    // default:
+    //   level0();
   }
+
   //////////////////////////////////
   //key movement and friction
   if (keys.right.pressed) {

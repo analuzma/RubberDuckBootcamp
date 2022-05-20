@@ -10,7 +10,7 @@ canvas.height = 400;
 const gravity = 0.7;
 
 //level variables
-let levelCount = 1;
+let levelCount = 0;
 
 //MAIN CHARACTER
 const character = new Character();
@@ -27,12 +27,13 @@ const keys = {
 
 //SOUNDS
 const bgMusic = new Audio("sounds/8bit.mp3");
-bgMusic.level = 0.5;
+bgMusic.level = 0.9;
 bgMusic.loop = true;
 
 const quackSFX = new Audio("sounds/Quack.mp3");
 quackSFX.level = 0.5;
-const ouchSFX = new Audio("sounds/ Ouch.mp3");
+const ouchSFX = new Audio("sounds/Ouch.mp3");
+ouchSFX.level = 0.2;
 const clickSFX = new Audio("sounds/Click.mp3");
 
 //make rubber duck quack

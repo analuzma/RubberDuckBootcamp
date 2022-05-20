@@ -93,3 +93,25 @@ a:hover {
 a:active {
   color: lightgreen;
 }
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.controls div {
+  display: flex;
+  flex-direction: column;
+}
+.arrow {
+  width: 200px;
+  height: 125px;
+}
+.space {
+  margin: 60px 20px 0px 0px;
+  height: 60px;
+}
+.wasd {
+  width: 200px;
+  height: 125px;
+}

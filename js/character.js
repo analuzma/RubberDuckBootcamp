@@ -127,7 +127,7 @@ class Character {
     );
   }
 
-  gameOver() {
+  lostPassLevel() {
     character.lifePoints -= 1;
     levelCount++;
     ouchSFX.play();

@@ -13,7 +13,7 @@ addEventListener("keydown", ({ keyCode }) => {
 
     case 38:
     case 87:
-    case 32: // up arrow and W
+    case 32:
       character.velocity.y -= 10;
       break;
   }
@@ -33,7 +33,7 @@ addEventListener("keyup", ({ keyCode }) => {
 
     case 38:
     case 87:
-    case 32: // up arrow,  W and spacebar
+    case 32:
       character.velocity.y -= 5;
       break;
   }
