@@ -249,16 +249,62 @@ function level4() {
 ////////////////////////////////////////////////////////////********************* START GAME
 ////////////////////////////////////////////////////////////
 //**  LEVEL STYLE **//
-const styleStartGame = new LevelStyle("black", "white", "RUBBER DUCK BOOTCAMP");
+const styleStartGame = new LevelStyle("#1a1a1a", "white", "");
 //entities
 
 //** EXTEND LEVEL LOGIC **//
 class StartGame extends LevelLogic {
   //unique methods for the level
+  startGameScreenBG() {
+    ctx.fillStyle = "DarkCyan";
+    ctx.fillRect(0, 300, 300, 100);
+    ctx.fillStyle = "maroon";
+    ctx.fillRect(300, 300, 300, 100);
+    ctx.fillStyle = "black";
+    ctx.fillRect(600, 300, 300, 200);
+    //ironduck
+    ctx.fillStyle = "DodgerBlue";
+    ctx.fillRect(600, 100, 100, 100);
+    ctx.fillStyle = "#1a1a1a";
+    ctx.fillRect(630, 125, 40, 40);
+    ctx.fillStyle = "#1a1a1a";
+    ctx.fillRect(660, 115, 20, 20);
+  }
+  startGameScreenTEXT() {
+    ctx.font = "50px VT323";
+    ctx.fillStyle = "white";
+    ctx.fillText(`Welcome ducky cadet,`, 50, 70);
+    ctx.font = "30px VT323";
+    ctx.fillText(`to successfully graduate I need you to`, 50, 120);
+    ctx.fillStyle = "Gold";
+    ctx.fillText(`READ FAST AND MOVE FASTER`, 50, 170);
+    ctx.fillStyle = "white";
+    ctx.fillText(`An ORDER will appear on each level`, 50, 220);
+    ctx.fillStyle = "GOLD";
+    ctx.fillText(`DO WHAT IS SAYS`, 50, 270);
+    //explaining
+    ctx.font = "50px VT323";
+    ctx.fillStyle = "lightyellow";
+    ctx.fillText(`JUMP`, 100, 350);
+    ctx.fillStyle = "white";
+    ctx.fillText(`!JUMP`, 400, 350);
+    ctx.font = "30px VT323";
+    ctx.fillText(`means JUMP`, 80, 380);
+    ctx.fillText(`means DO NOT JUMP`, 350, 380);
+    //ready to start?
+    ctx.font = "28px VT323";
+    ctx.fillStyle = "white";
+    ctx.fillText(`PRESS "ENTER"`, 610, 340);
+    ctx.fillText(`TO START EXAM ->`, 610, 380);
+    //IronDucks
+    ctx.font = "25px VT323";
+    ctx.fillStyle = "#1a1a1a";
+    ctx.fillText(`IronDucks`, 605, 190);
+  }
   goToLevel1() {
     addEventListener("keyup", ({ keyCode }) => {
       switch (event.keyCode) {
-        case 13: //enter keycode
+        case 13: //"Enter" keycode to start game
           quackSFX.play();
           bgMusic.play();
           levelCount = 1;
@@ -275,13 +321,12 @@ const levelStartGame = new StartGame();
 //** TURNS WHOLE "LEVEL1" into a function that will be added to the global TIME UPDATE "ANIMATE"  **//
 function level0() {
   //LEVEL
-  //adds music-------------------------------------------------------------------
+
   //background
   styleStartGame.draw();
-  styleStartGame.LevelTitleScreen();
+  levelStartGame.startGameScreenBG();
+  levelStartGame.startGameScreenTEXT();
   //character
-
-  //entities
 
   //level methods
   levelStartGame.goToLevel1();

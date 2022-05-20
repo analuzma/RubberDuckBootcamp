@@ -6,8 +6,6 @@
 [ x ]  Item Collide 5/12/2022
 [  x  ] CREATE LEVEL CLASS
 
-[ ] PAUSAR JUEGO
-
   [  x  ] Do Level 1
     [  x ] create objects 
     [  //  ] pick up objects/ display ( ? )

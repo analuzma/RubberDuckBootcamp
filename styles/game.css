@@ -103,6 +103,7 @@ a:active {
   display: flex;
   flex-direction: column;
 }
+
 .arrow {
   width: 200px;
   height: 125px;
@@ -112,6 +113,6 @@ a:active {
   height: 60px;
 }
 .wasd {
-  width: 200px;
+  width: 230px;
   height: 125px;
 }
