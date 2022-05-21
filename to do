@@ -20,20 +20,22 @@
 DO LEVELS
                                     [  x  ] this or that
                                     [    ] COFFE BREAK /WATER
-                                    [    ] SUICIDE
+                                    [  x  ] SUICIDE
                                     [    ] WALK
                                     [  x  ] JUMP
                                     [    ] COLLE
                                     [    ] HIDE /BOX COLLISION GRAVITY 
                                     [    ] SURVIVE/ SQUARE COLLISION HORIZONTAL
-                                     [    ] ROMANCE (COLLISION WITH CHARACTER)
+                                     [  x  ] ROMANCE (COLLISION WITH CHARACTER)
                                    [    ]   COLLISION WITH SPIKES
 
 IMPORTANT:
-[    ] CREATE STARTGAME
-[    ] CREATE YOU WIN
-[    ] CREATE YOU LOST
-[    ] MUSIC?
-[    ] LEVELS
+[  x  ] CREATE STARTGAME
+[  x  ] MUSIC?
 [  X  ] SHOW CONTROLS
-[    ] STORY/HOW TO PLAY
+[  x  ] STORY/HOW TO PLAY
+
+[   x ] CREATE YOU WIN
+[ x   ] CREATE YOU LOST
+[  x  ] RESTART GAME
+[    ] LEVELS 7/10

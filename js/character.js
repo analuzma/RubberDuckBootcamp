@@ -38,7 +38,6 @@ class Character {
       ctx.fillRect(64, 30, 8, 8);
       ctx.fillRect(58, 35, 10, 10);
       //heart2
-      ctx.fillStyle = "red";
       ctx.fillRect(78, 30, 8, 8);
       ctx.fillRect(88, 30, 8, 8);
       ctx.fillRect(82, 35, 10, 10);
@@ -65,6 +64,7 @@ class Character {
     } else if (this.lifePoints === 1) {
       //hurtSFX.play();
       //heart1
+      ctx.fillStyle = "red";
       ctx.fillRect(54, 30, 8, 8);
       ctx.fillRect(64, 30, 8, 8);
       ctx.fillRect(58, 35, 10, 10);
@@ -147,5 +147,67 @@ class Character {
     this.position.y = 200;
     this.velocity.x = 0;
     this.velocity.y = 0;
+  }
+  graduation() {
+    ctx.fillStyle = "#1a1a1a";
+    ctx.fillRect(this.x, this.y, this.width, this.height);
+    //message
+    ctx.fillStyle = "white";
+    ctx.font = "60px VT323";
+    ctx.fillStyle = this.nameColor;
+    ctx.fillStyle = "white";
+    ctx.font = "45px VT323";
+    ctx.fillText(`Congratulations ducky cadet!`, 50, 100);
+    ctx.fillStyle = "#1E90FF";
+    ctx.fillText(`You PASSED the exam!`, 50, 170);
+    ctx.fillStyle = "#F9B811";
+    ctx.font = "50px VT323";
+    ctx.fillText(`You are an Iron Duck!`, 50, 300);
+    ctx.fillStyle = "white";
+    ctx.font = "30px VT323";
+    ctx.fillText(`You're certified to help a programmer debug code`, 50, 350);
+    ctx.fillText(`${levelCount - 1}/10`, 50, 230);
+    //ironduck
+    ctx.fillStyle = "DodgerBlue";
+    ctx.fillRect(600, 100, 100, 100);
+    ctx.fillStyle = "#1a1a1a";
+    ctx.fillRect(630, 125, 40, 40);
+    ctx.fillStyle = "#1a1a1a";
+    ctx.fillRect(660, 115, 20, 20);
+    //IronDucks
+    ctx.font = "25px VT323";
+    ctx.fillStyle = "#1a1a1a";
+    ctx.fillText(`IronDucks`, 605, 190);
+  }
+  noGraduation() {
+    ctx.fillStyle = "#1a1a1a";
+    ctx.fillRect(this.x, this.y, this.width, this.height);
+    //message
+    ctx.fillStyle = "white";
+    ctx.font = "60px VT323";
+    ctx.fillStyle = this.nameColor;
+    ctx.fillStyle = "white";
+    ctx.font = "50px VT323";
+    ctx.fillText(`Sorry ducky cadet,`, 50, 100);
+    ctx.fillStyle = "#A50000";
+    ctx.fillText(`You did NOT pass the exam`, 50, 170);
+    ctx.fillStyle = "#F9B811";
+    ctx.font = "50px VT323";
+    ctx.fillText(`You made it to LEVEL ${levelCount - 1} this time`, 50, 300);
+    ctx.fillStyle = "white";
+    ctx.font = "30px VT323";
+    ctx.fillText(`Pay better attention next time.`, 50, 350);
+    ctx.fillText(`${levelCount - 1}/10`, 50, 230);
+    //ironduck
+    ctx.fillStyle = "DodgerBlue";
+    ctx.fillRect(600, 100, 100, 100);
+    ctx.fillStyle = "#1a1a1a";
+    ctx.fillRect(630, 125, 40, 40);
+    ctx.fillStyle = "#1a1a1a";
+    ctx.fillRect(660, 115, 20, 20);
+    //IronDucks
+    ctx.font = "25px VT323";
+    ctx.fillStyle = "#1a1a1a";
+    ctx.fillText(`IronDucks`, 605, 190);
   }
 }

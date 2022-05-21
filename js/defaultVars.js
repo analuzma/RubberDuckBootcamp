@@ -29,7 +29,6 @@ const keys = {
 const bgMusic = new Audio("sounds/8bit.mp3");
 bgMusic.level = 0.9;
 bgMusic.loop = true;
-
 const quackSFX = new Audio("sounds/Quack.mp3");
 quackSFX.level = 0.5;
 const ouchSFX = new Audio("sounds/Ouch.mp3");
@@ -42,40 +41,17 @@ img.onclick = () => {
   quackSFX.play();
 };
 
-// function toggleMute() {
-//   if (mute.value === "unmuted") {
-//     sounds.forEach((sound) => (sound.volume = 0));
-//     mute.value = "muted";
-//     mute.innerText = "🔈";
-//   } else {
-//     sounds.forEach((sound) => (sound.volume = 0.8));
-//     music.volume = 0.8;
-//     mute.value = "unmuted";
-//     mute.innerText = "🔇";
-//   }
-// }
+//START AND RESTART GAME
+let botonStart = document.getElementById("start");
 
-// nextLevel() {
-//     levelCount++;
-
-//     switch (levelCount) {
-//       case 1:
-//         navigationTutorial.classList.add("hidden");
-//         break;
-
-//       case 2:
-//         layersTutorial.classList.remove("hidden");
-//         break;
-
-//       case 3:
-//         layersTutorial.classList.add("hidden");
-//         break;
-
-//       case 8:
-//         return playerWon();
-//     }
-
-//     currentLevel = levels[levelCount];
-//     //nextLevelSound.play();
-//   this.respawn();
-// }
+botonStart.onclick = () => {
+  if (botonStart.innerText === "CLICK HERE TO START EXAM:") {
+    quackSFX.play();
+    bgMusic.play();
+    levelCount = 1;
+    botonStart.innerText = "RESTART EXAM";
+  } else if (botonStart.innerText === "RESTART EXAM") {
+    window.location.reload();
+    botonStart.innerText = "CLICK HERE TO START EXAM:";
+  }
+};
