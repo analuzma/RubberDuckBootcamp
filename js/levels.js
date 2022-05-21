@@ -353,7 +353,7 @@ function level6() {
 //////////////////////////////////////////////////////////////////
 //LEVEL NAME: "!SUICIDE"
 //NEGATED: TRUE
-//LEVEL NUMBER: 4
+//LEVEL NUMBER: 7
 /////////////////////////////////////////////////////////////////
 //**  LEVEL STYLE **//
 const styleSuicide = new LevelStyle("RosyBrown", "Cornsilk ", "SUICIDE");
@@ -374,7 +374,7 @@ class Suicide extends LevelLogic {
 //CREATE LEVEL WITH EXTENDED LOGIC//
 const levelSuicide = new Suicide(60);
 
-//** LEVEL4 TO FUNCTION
+//** LEVEL7 TO FUNCTION
 function level7() {
   //LEVEL
   //background
@@ -440,6 +440,105 @@ function level8() {
   // Update the timer
   levelTouchRed.reduceTime();
 }
+
+//////////////////////////////////////////////////////////////////
+//LEVEL NAME: "!ROMANCE"
+//NEGATED: FALSE
+//LEVEL NUMBER: 9
+/////////////////////////////////////////////////////////////////
+//**  LEVEL STYLE **//
+const styleRomanceNeg = new LevelStyle("darkred", "white", "!ROMANCE");
+//** ENTITIES**//
+const spike5 = new Spike("gray", 50, 320, 170, 70, "darkred");
+const patita2 = new Pata(700, 350, 50, 50);
+
+//** EXTEND LEVEL LOGIC **//
+class RomanceNeg extends LevelLogic {
+  constructor(time) {
+    super(time);
+  }
+  //unique methods for the level
+  didItWin() {
+    if (character.collision(patita) === true) {
+      return character.lostPassLevel();
+    } else if (character.collision(spike2) === true) {
+      return character.winPassLevel();
+    }
+  }
+}
+//CREATE LEVEL WITH EXTENDED LOGIC//
+const levelRomanceNeg = new RomanceNeg(10);
+
+//** LEVEL9 TO FUNCTION
+function level9() {
+  //LEVEL
+  //background
+  styleRomanceNeg.draw();
+  styleRomanceNeg.LevelTitleScreen();
+  //character
+  character.lifeDraw();
+  character.update();
+  //entities
+  spike5.draw();
+  patita2.draw();
+  //level methods
+  levelRomanceNeg.TimeScreen();
+  levelRomanceNeg.didItWin();
+  // Update the timer
+  levelRomanceNeg.waitReduceTime();
+}
+//////////////////////////////////////////////////////////////////
+//LEVEL NAME: "TOUCH RED"
+//NEGATED: FALSE
+//LEVEL NUMBER: 10
+/////////////////////////////////////////////////////////////////
+//**  LEVEL STYLE **//
+const styleTouchYell = new LevelStyle(
+  "CadetBlue ",
+  "Aquamarine",
+  "TOUCH YELLOW"
+);
+//** ENTITIES**//
+const objectOra = new Object(450, 0, 50, 50, "orange");
+const objectYell = new Object(200, 0, 50, 50, "yellow");
+
+//** EXTEND LEVEL LOGIC **//
+class TouchYell extends LevelLogic {
+  constructor(time) {
+    super(time);
+  }
+  //unique methods for the level
+  didItWin() {
+    if (character.collision(objectYell) === true) {
+      return character.winPassLevel();
+    } else if (character.collision(objectOra) === true) {
+      return character.lostPassLevel();
+    }
+  }
+}
+
+//CREATE LEVEL WITH EXTENDED LOGIC//
+const levelTouchYell = new TouchYell(15);
+
+//** LEVEL 10 FUNCTION
+function level10() {
+  //LEVEL
+  //background
+  styleTouchYell.draw();
+  styleTouchYell.LevelTitleScreen();
+  //character
+  character.lifeDraw();
+  character.update();
+  //entities
+  objectYell.draw();
+  objectOra.draw();
+  //level methods
+  levelTouchYell.TimeScreen();
+  levelTouchYell.didItWin();
+  // Update the timer
+  levelTouchYell.reduceTime();
+}
+
 ////////////////////////////////////////////////////////////********************* START GAME
 ////////////////////////////////////////////////////////////
 //**  LEVEL STYLE **//
@@ -565,16 +664,14 @@ function animate() {
         level8();
         break;
       case 9:
-        youWin();
+        level9();
         break;
       case 10:
-        dayName = "Thursday";
+        level10();
         break;
       case 11: //you win
-        dayName = "Thursday";
+        youWin();
         break;
-      // default:
-      //   level0();
     }
   } else if (character.lifePoints === 0) {
     gameOver();

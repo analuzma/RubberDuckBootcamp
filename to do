@@ -19,7 +19,6 @@
 
 DO LEVELS
                                     [  x  ] this or that
-                                    [    ] COFFE BREAK /WATER
                                     [  x  ] SUICIDE
                                     [    ] WALK
                                     [  x  ] JUMP
@@ -38,4 +37,4 @@ IMPORTANT:
 [   x ] CREATE YOU WIN
 [ x   ] CREATE YOU LOST
 [  x  ] RESTART GAME
-[    ] LEVELS 7/10
+[    ] LEVELS 8/10
