@@ -8,6 +8,8 @@ You can play it here ➡️https://analuzma.github.io/project-obdc-game/
 
 # Credits:
 
+Thanks to Ironhack, my professors Dylan and Kain. Also fellow bootcampers Xchell, Valentían, Azdhy and Yafté.
+
 # Sounds:
 
 "8-bit Adventure" by [AdhesiveWombat](https://soundcloud.com/adhesivewombat/adhesivewombat-8-bit-adventure)
